@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <title>Sumo Sentinel Vision App</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+  </head>
+  <body>
+    <header class="cenfo-header">
+      <div class="cenfo-header-content">
+        <img src="../static/images/Logo-Blanco (1).png" alt="Logo Universidad Cenfotec" class="cenfo-logo"></img>
+        <div class="cenfo-title-block">
+          <h1 class="cenfo-title">Sumo Sentinel Vision App</h1>
+        </div>
+      </div>  
+    </header>
+
+    <main class="cenfo-main">
+      <div class="cenfo-main-content">
+        <!-- Bloque de videos -->
+        <div class="cenfo-videos">
+          <div class="cenfo-videos-row">
+            <section class="cenfo-video-block">
+              <h2 class="cenfo-section-title">Imagen original</h2>
+              <img src="http://192.168.1.38:81/" class="cenfo-video" alt="Imagen original"></img>
+            </section>
+            <section class="cenfo-video-block">
+              <h2 class="cenfo-section-title">Imagen ajustada</h2>
+              <video controls src="http://192.168.1.38:81" poster="preview2.jpg" class="cenfo-video"></video>
+            </section>
+          </div>
+          <div class="cenfo-videos-row">
+            <section class="cenfo-video-block">
+              <h2 class="cenfo-section-title">Imagen del juzgamiento</h2>
+              <video controls src="video3.mp4" poster="preview3.jpg" class="cenfo-video"></video>
+            </section>
+          </div>
+        </div>
+        <!-- Panel de control a la derecha -->
+        <aside class="cenfo-panel">
+          <h2 class="cenfo-panel-title">Panel de Control</h2>
+          <form class="cenfo-panel-form">
+            <!-- Filtros -->
+            <div class="cenfo-panel-filtros">
+              <h3 class="cenfo-panel-filtros-title">Filtros</h3>
+              <!-- Toggle switches para 8 filtros -->
+              <div class="cenfo-panel-toggles">
+                <label class="cenfo-toggle-label">
+                  <span>Ajuste de brillo y contraste</span>
+                  <input type="checkbox" name="brillo_contraste" class="toggle-switch">
+                </label>
+                <label style="display:flex; justify-content:space-between; align-items:center; gap:12px;">
+                  <span>Ajuste HSV</span>
+                  <input type="checkbox" name="ajuste_hsv" class="toggle-switch" style="width:40px; height:20px;">
+                </label>
+                <label style="display:flex; justify-content:space-between; align-items:center; gap:12px;">
+                  <span>Transformar a escala de grises</span>
+                  <input type="checkbox" name="escala_grises" class="toggle-switch" style="width:40px; height:20px;">
+                </label>
+                <label style="display:flex; justify-content:space-between; align-items:center; gap:12px;">
+                  <span>Ecualización de histograma</span>
+                  <input type="checkbox" name="ecu_histograma" class="toggle-switch" style="width:40px; height:20px;">
+                </label>
+                <label style="display:flex; justify-content:space-between; align-items:center; gap:12px;">
+                  <span>Ajuste de Min-Max para blancos</span>
+                  <input type="checkbox" name="min_max_blancos" class="toggle-switch" style="width:40px; height:20px;">
+                </label>
+                <label style="display:flex; justify-content:space-between; align-items:center; gap:12px;">
+                  <span>Filtro morfológico</span>
+                  <input type="checkbox" name="filtro_morfologico" class="toggle-switch" style="width:40px; height:20px;">
+                </label>
+                <label style="display:flex; justify-content:space-between; align-items:center; gap:12px;">
+                  <span>Filtro bilateral</span>
+                  <input type="checkbox" name="filtro_bilateral" class="toggle-switch" style="width:40px; height:20px;">
+                </label>
+                <label style="display:flex; justify-content:space-between; align-items:center; gap:12px;">
+                  <span>Filtro gaussiano</span>
+                  <input type="checkbox" name="filtro_gaussiano" class="toggle-switch" style="width:40px; height:20px;">
+                </label>
+              </div>
+              <!-- Sliders para brillo, contraste, min y max blancos -->
+              <div class="cenfo-panel-sliders">
+                <label class="cenfo-slider-label">
+                <span>Brillo (<span id="brillo-value">0</span>)</span>
+                <input type="range" name="brillo" min="-100" max="100" value="0" step="1" oninput="document.getElementById('brillo-value').textContent=this.value;">
+                </label>
+                <label style="color:var(--cenfo-light); font-size:1em; display:flex; flex-direction:column; gap:6px;">
+                <span>Contraste (<span id="contraste-value">1.0</span>)</span>
+                <input type="range" name="contraste" min="0.5" max="3.0" value="1.0" step="0.01" style="width:100%;" oninput="document.getElementById('contraste-value').textContent=this.value;">
+                </label>
+                <label style="color:var(--cenfo-light); font-size:1em; display:flex; flex-direction:column; gap:6px;">
+                <span>Mínimo blancos (<span id="min-blancos-value">200</span>)</span>
+                <input type="range" name="min_blancos" min="0" max="255" value="200" step="1" style="width:100%;" oninput="document.getElementById('min-blancos-value').textContent=this.value;">
+                </label>
+                <label style="color:var(--cenfo-light); font-size:1em; display:flex; flex-direction:column; gap:6px;">
+                <span>Máximo blancos (<span id="max-blancos-value">255</span>)</span>
+                <input type="range" name="max_blancos" min="0" max="255" value="255" step="1" style="width:100%;" oninput="document.getElementById('max-blancos-value').textContent=this.value;">
+                </label>
+              </div>
+              <!-- Algoritmos de detección del dojo -->
+              <div class="cenfo-panel-toggles">
+                <h3 class="cenfo-panel-dojo-title">Algoritmos de detección</h3>
+                <div class="cenfo-panel-toggles">
+                  <label class="cenfo-toggle-label">
+                    <span>Detección por Hough</span>
+                    <input type="checkbox" name="deteccion_bordes" class="toggle-switch" style="width:40px; height:20px;">
+                  </label>
+                  <label style="display:flex; justify-content:space-between; align-items:center; gap:12px;">
+                    <span>Detección por contornos</span>
+                    <input type="checkbox" name="deteccion_contornos" class="toggle-switch" style="width:40px; height:20px;">
+                  </label>
+                  <label style="display:flex; justify-content:space-between; align-items:center; gap:12px;">
+                    <span>Detección por Canny</span>
+                    <input type="checkbox" name="deteccion_dojo" class="toggle-switch" style="width:40px; height:20px;">
+                  </label>
+                </div>
+              </div>
+            </div>
+          </form>
+        </aside>
+      </div>
+    </main> 
+    <footer class="cenfo-footer">
+      <p class="cenfo-footer-text">&copy; 2025 Universidad Cenfotec | Escuela de Ingeniería del Software</p>
+    </footer>
+  </body>
+</html>
+
