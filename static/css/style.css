@@ -15,6 +15,8 @@ body {
   padding: 0;
 }
 
+/* ----- Header styles ----- */
+
 .cenfo-header {
   background: var(--cenfo-dark);
   color: var(--cenfo-light);
@@ -45,6 +47,8 @@ body {
   color: var(--cenfo-light);
 }
 
+/* ----- Main content styles ----- */
+
 .cenfo-main {
   background: var(--cenfo-dark);
   min-height: 60vh;
@@ -55,10 +59,12 @@ body {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  gap: 16px;
+  gap: 32px;
   max-width: 1200px;
   margin: 0 auto;
 }
+
+/* ----- Video section styles ----- */
 
 .cenfo-videos {
   display: flex;
@@ -67,10 +73,17 @@ body {
 }
 
 .cenfo-videos-row {
-  display: flex;
+  display: flex; 
   justify-content: center;
   gap: 32px;
   width: 100%;
+}
+
+.cenfo-video-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 2;
 }
 
 .cenfo-video-block {
@@ -91,10 +104,37 @@ body {
 .cenfo-video {
   width: 100%;
   height: auto;
+  aspect-ratio: 4 / 3;
   object-fit: contain;
   border: 3px solid red;
   display: block;
+  background: #222; /* Fondo para mostrar el recuadro vacío */
 }
+
+/* ----- Video selector styles ----- */
+
+.cenfo-video-selector {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin-top: 18px;
+  margin-bottom: 12px;
+}
+
+.cenfo-selector-title {
+  color: var(--cenfo-gray);
+  font-family: Montserrat, Arial, sans-serif;
+  margin-bottom: 18px;
+  text-align: center;
+}
+
+.cenfo-video-selector label {
+  font-size: 1.1em;
+  color: var(--cenfo-light);
+  cursor: pointer;
+}
+
+<!-- Aside panel styles -->
 
 .cenfo-panel {
   flex: 1 1 0;
@@ -140,7 +180,8 @@ body {
   gap: 12px;
 }
 
-/* Toggle switch styles */
+/* ----- Toggle switch styles ----- */
+
 .toggle-switch {
   appearance: none;
   width: 40px;

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -9,35 +8,32 @@
   <body>
     <header class="cenfo-header">
       <div class="cenfo-header-content">
-        <img src="../static/images/Logo-Blanco (1).png" alt="Logo Universidad Cenfotec" class="cenfo-logo"></img>
+        <img src="../static/images/Logo-Blanco (1).png" alt="Logo Universidad Cenfotec" class="cenfo-logo">
         <div class="cenfo-title-block">
           <h1 class="cenfo-title">Sumo Sentinel Vision App</h1>
         </div>
       </div>  
     </header>
-
     <main class="cenfo-main">
       <div class="cenfo-main-content">
-        <!-- Bloque de videos -->
-        <div class="cenfo-videos">
-          <div class="cenfo-videos-row">
-            <section class="cenfo-video-block">
-              <h2 class="cenfo-section-title">Imagen original</h2>
-              <img src="http://192.168.0.78:81/" class="cenfo-video" alt="Imagen original">
-            </section>
-            <section class="cenfo-video-block">
-              <h2 class="cenfo-section-title">Imagen ajustada</h2>
-              <img src="http://192.168.0.78:81/" class="cenfo-video" alt="Imagen ajustada">
-            </section>
-          </div>
-          <div class="cenfo-videos-row">
-            <section class="cenfo-video-block">
-              <h2 class="cenfo-section-title">Imagen del juzgamiento</h2>
-              <img src="http://192.168.0.78:81/" class="cenfo-video" alt="Imagen del juzgamiento">
-            </section>
+        <div class="cenfo-video-group">
+          <div class="cenfo-video-block">
+            <img id="main-video" class="cenfo-video" src="http://192.168.0.78:81/original" alt="Imagen principal">
+          </div> 
+          <h2 class="cenfo-selector-title">Selector de imagen</h2>
+          <div class="cenfo-video-selector">
+            <label>
+              <input type="radio" name="img-select" value="original" checked>Imagen original
+            </label>
+            <label>
+              <input type="radio" name="img-select" value="ajustada">Imagen ajustada
+            </label>
+            <label>
+              <input type="radio" name="img-select" value="juzgamiento">Imagen del juzgamiento
+            </label>
           </div>
         </div>
-        <!-- Panel de control a la derecha -->
+      <!-- Panel de control -->
         <aside class="cenfo-panel">
           <h2 class="cenfo-panel-title">Panel de Control</h2>
           <form class="cenfo-panel-form">
@@ -127,4 +123,5 @@
     <script src="../static/js/script.js"></script>
   </body>
 </html>
+
 
