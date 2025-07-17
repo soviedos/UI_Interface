@@ -61,7 +61,6 @@ body {
 }
 
 .cenfo-videos {
-  flex: 2 1 0;
   display: flex;
   flex-direction: column;
   gap: 32px;
@@ -75,12 +74,11 @@ body {
 }
 
 .cenfo-video-block {
-  flex: 1 1 300px;
-  max-width: 350px;
-  margin-bottom: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+  display: block;
 }
 
 .cenfo-section-title {
@@ -92,11 +90,10 @@ body {
 
 .cenfo-video {
   width: 100%;
-  max-width: 320px;
-  height: 240px;
-  border: 2px solid var(--cenfo-red);
-  border-radius: 12px;
-  background: var(--cenfo-dark);
+  height: auto;
+  object-fit: contain;
+  border: 3px solid red;
+  display: block;
 }
 
 .cenfo-panel {
