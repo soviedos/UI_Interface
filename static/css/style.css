@@ -66,19 +66,6 @@ body {
 
 /* ----- Video section styles ----- */
 
-.cenfo-videos {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-}
-
-.cenfo-videos-row {
-  display: flex; 
-  justify-content: center;
-  gap: 32px;
-  width: 100%;
-}
-
 .cenfo-video-group {
   display: flex;
   flex-direction: column;
@@ -86,55 +73,59 @@ body {
   flex: 2;
 }
 
-.cenfo-video-block {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 4 / 3;
-  object-fit: contain;
-  display: block;
+.cenfo-videos-grid {
+  display: grid;
+  grid-template-columns: 320px 320px;
+  grid-template-rows: 240px 1fr;
+  gap: 24px;
+  width: 664px;       /* 320+320+gap */
+  margin-bottom: 24px;
 }
 
-.cenfo-section-title {
-  color: var(--cenfo-gray);
+.cenfo-video-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: flex-start;
+}
+
+.top-left {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+.top-right {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+}
+
+.bottom {
+  grid-column: 1 / 3;
+  grid-row: 2 / 3;
+}
+
+.cenfo-video-title {
+  font-weight: bold;
   font-family: Montserrat, Arial, sans-serif;
-  text-align: center;
-  margin-bottom: 12px;
+  font-size: 1.15em;
+  color: var(--cenfo-light);
+  margin-top: 6px;
+  margin-bottom: 6px;
+  margin-left: 2px;
 }
 
 .cenfo-video {
   width: 100%;
-  height: auto;
+  height: 100%;
   aspect-ratio: 4 / 3;
   object-fit: contain;
-  border: 3px solid red;
+  border: 3px solid #a80000;
+  background: #222;
   display: block;
-  background: #222; /* Fondo para mostrar el recuadro vacío */
+  border-radius: 10px;
 }
 
-/* ----- Video selector styles ----- */
-
-.cenfo-video-selector {
-  display: flex;
-  justify-content: center;
-  gap: 32px;
-  margin-top: 18px;
-  margin-bottom: 12px;
-}
-
-.cenfo-selector-title {
-  color: var(--cenfo-gray);
-  font-family: Montserrat, Arial, sans-serif;
-  margin-bottom: 18px;
-  text-align: center;
-}
-
-.cenfo-video-selector label {
-  font-size: 1.1em;
-  color: var(--cenfo-light);
-  cursor: pointer;
-}
-
-<!-- Aside panel styles -->
+/* ----- Aside panel styles ----- */
 
 .cenfo-panel {
   flex: 1 1 0;
@@ -255,3 +246,39 @@ body {
     margin-top: 32px;
   }
 }
+
+/* ----- Gráficas de métricas ----- */
+
+.cenfo-metrics-charts {
+  width: 100%;
+  max-width: 664px;
+  margin: 24px auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cenfo-metrics-charts canvas {
+  background: #191b26;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  border: 1px solid #222;
+  width: 100% !important;
+  height: 140px !important;
+  margin-bottom: 6px;
+}
+
+.cenfo-chart-block {
+  margin-bottom: 18px;
+}
+.cenfo-chart-title {
+  display: block;
+  color: var(--cenfo-gray);
+  font-size: 1.1em;
+  font-family: Montserrat, Arial, sans-serif;
+  margin-bottom: 8px;
+  margin-left: 4px;
+  font-weight: bold;
+}
+
+

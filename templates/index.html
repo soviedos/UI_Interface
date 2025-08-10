@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Sumo Sentinel Vision App</title>
     <link rel="stylesheet" href="../static/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
   <body>
     <header class="cenfo-header">
@@ -17,22 +18,39 @@
     <main class="cenfo-main">
       <div class="cenfo-main-content">
         <div class="cenfo-video-group">
-          <div class="cenfo-video-block">
-            <img id="main-video" class="cenfo-video" src="http://192.168.0.78:81/original" alt="Imagen principal">
-          </div> 
-          <h2 class="cenfo-selector-title">Selector de imagen</h2>
-          <div class="cenfo-video-selector">
-            <label>
-              <input type="radio" name="img-select" value="original" checked>Imagen original
-            </label>
-            <label>
-              <input type="radio" name="img-select" value="ajustada">Imagen ajustada
-            </label>
-            <label>
-              <input type="radio" name="img-select" value="juzgamiento">Imagen del juzgamiento
-            </label>
+          <div class="cenfo-videos-grid">
+            <div class="cenfo-video-block top-left">
+              <span class="cenfo-video-title">Imagen Original</span>
+              <img id="video1" class="cenfo-video" src="http://192.168.0.74:81/stream1" alt="Stream 1">
+            </div>
+            <div class="cenfo-video-block top-right">
+              <span class="cenfo-video-title">Imagen con Filtro</span>
+              <img id="video2" class="cenfo-video" src="http://192.168.0.74:81/stream2" alt="Stream 2">
+            </div>
+            <div class="cenfo-video-block bottom">
+              <span class="cenfo-video-title">Juzgamiento</span>
+              <img id="video3" class="cenfo-video" src="http://192.168.0.74:81/stream3" alt="Stream 3">
+            </div>
           </div>
-        </div>
+
+          <!-- Gráficas de métricas -->
+          <div class="cenfo-charts">
+            <div class="cenfo-chart-block">
+              <span class="cenfo-chart-title">Memoria Libre</span>
+              <canvas id="memoryChart" width="640" height="120"></canvas>
+            </div>
+            <div class="cenfo-chart-block">
+              <span class="cenfo-chart-title">Carga CPU</span>
+              <canvas id="cpuChart" width="640" height="120"></canvas>
+            </div>
+            <div class="cenfo-chart-block">
+              <span class="cenfo-chart-title">RSSI WiFi</span>
+              <canvas id="rssiChart" width="640" height="120"></canvas>
+            </div>
+          </div>
+
+      </div>
+
       <!-- Panel de control -->
         <aside class="cenfo-panel">
           <h2 class="cenfo-panel-title">Panel de Control</h2>
