@@ -1,23 +1,23 @@
-# Sumo Sentinel Vision App 🥋
+# Sumo Sentinel Vision App
 
 **Interfaz web para monitoreo en tiempo real de competencias de sumo robótico**
 
 Universidad Cenfotec - Escuela de Ingeniería del Software  
 Proyecto de Investigación Aplicada 2 - MISIA
 
-## 📖 Descripción
+## Descripción
 
 Sumo Sentinel Vision es una aplicación web para el monitoreo en tiempo real de competencias de sumo robótico. La interfaz permite visualizar múltiples streams de video, aplicar filtros de procesamiento de imágenes, y monitorear métricas del sistema como memoria, CPU y señal WiFi.
 
 ### Características principales:
 
-- 🎥 **Visualización de streams en tiempo real** desde cámaras conectadas
-- 🎛️ **Panel de control interactivo** con filtros de procesamiento de imagen
-- 📊 **Gráficas de métricas** del sistema en tiempo real
-- 🖼️ **Múltiples algoritmos de detección** (Hough, Contornos, Canny)
-- 🎨 **Interfaz responsive** con diseño de Universidad Cenfotec
+- **Visualización de streams en tiempo real** desde cámaras conectadas
+- **Panel de control interactivo** con filtros de procesamiento de imagen
+- **Gráficas de métricas** del sistema en tiempo real
+- **Múltiples algoritmos de detección** (Hough, Contornos, Canny)
+- **Interfaz responsive** con diseño de Universidad Cenfotec
 
-## 🏗️ Estructura del proyecto
+## Estructura del proyecto
 
 ```
 UI_Interface/
@@ -35,7 +35,7 @@ UI_Interface/
 └── README.md               # Este archivo
 ```
 
-## 🚀 Instalación y configuración
+## Instalación y configuración
 
 ### Prerrequisitos
 
@@ -56,7 +56,7 @@ cd UI_Interface
 pip install flask
 ```
 
-## 🖥️ Ejecución del servidor
+## Ejecución del servidor
 
 ### Opción 1: Live Server (VS Code) - Recomendado para desarrollo
 
@@ -81,7 +81,7 @@ python3 -m http.server 8000
 
 Abrir `http://localhost:8000` en el navegador
 
-## 🎛️ Configuración de streams
+## Configuración de streams
 
 Por defecto, la aplicación está configurada para recibir streams desde:
 - `http://192.168.0.74:81/stream1` - Imagen Original
@@ -101,33 +101,33 @@ Y en las líneas de actualización de imágenes:
 document.getElementById('video1').src = 'http://TU_IP:81/stream1?ts=' + Date.now();
 ```
 
-## 🎨 Filtros disponibles
+## Filtros disponibles
 
 ### Filtros de procesamiento:
-- ✨ Ajuste de brillo y contraste
-- 🌈 Ajuste HSV
-- ⚫ Transformar a escala de grises
-- 📈 Ecualización de histograma
-- ⚪ Ajuste de Min-Max para blancos
-- 🔧 Filtro morfológico
-- 🌊 Filtro bilateral
-- 🌀 Filtro gaussiano
+- Ajuste de brillo y contraste
+- Ajuste HSV
+- Transformar a escala de grises
+- Ecualización de histograma
+- Ajuste de Min-Max para blancos
+- Filtro morfológico
+- Filtro bilateral
+- Filtro gaussiano
 
 ### Algoritmos de detección:
-- 🔍 Detección por Hough
-- 🎯 Detección por contornos
-- ⚡ Detección por Canny
+- Detección por Hough
+- Detección por contornos
+- Detección por Canny
 
-## 📊 Métricas monitoreadas
+## Métricas monitoreadas
 
 La aplicación muestra gráficas en tiempo real de:
-- 💾 **Memoria libre** del sistema
-- ⚙️ **Carga de CPU** (idle_count)
-- 📶 **Señal RSSI WiFi**
+- **Memoria libre** del sistema
+- **Carga de CPU** (idle_count)
+- **Señal RSSI WiFi**
 
 Las gráficas se actualizan automáticamente cada 3.5 segundos.
 
-## 🛠️ Tecnologías utilizadas
+## Tecnologías utilizadas
 
 - **Frontend:** HTML5, CSS3, JavaScript ES6
 - **Gráficas:** Chart.js
@@ -135,14 +135,14 @@ Las gráficas se actualizan automáticamente cada 3.5 segundos.
 - **Estilos:** CSS Variables, Flexbox, Grid
 - **Servidor de desarrollo:** Live Server (VS Code)
 
-## 📱 Compatibilidad
+## Compatibilidad
 
-- ✅ Chrome 70+
-- ✅ Firefox 65+
-- ✅ Safari 12+
-- ✅ Edge 79+
+- Chrome 70+
+- Firefox 65+
+- Safari 12+
+- Edge 79+
 
-## 🔧 Desarrollo
+## Desarrollo
 
 ### Variables CSS principales:
 ```css
@@ -161,7 +161,7 @@ Las gráficas se actualizan automáticamente cada 3.5 segundos.
 - `cenfo-panel`: Panel de control lateral
 - `cenfo-footer`: Pie de página institucional
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 ### Los streams no cargan:
 1. Verificar que el dispositivo esté conectado a la red
@@ -176,12 +176,12 @@ Las gráficas se actualizan automáticamente cada 3.5 segundos.
 ### Problemas de CORS:
 Si usas Live Server, los requests externos pueden fallar. Usar Flask para desarrollo completo.
 
-## 👥 Contribuidores
+## Contribuidores
 
 - **Universidad Cenfotec** - Escuela de Ingeniería del Software
 - **MISIA** - Proyecto de Investigación Aplicada 2
 
-## 📄 Licencia
+## Licencia
 
 Este proyecto es desarrollado como parte del programa académico de Universidad Cenfotec.
 
